@@ -12,7 +12,7 @@ import (
 
 	"golang.org/x/net/idna"
 
-	"github.com/mvdan/xurls"
+	"github.com/oosidat/xurls"
 )
 
 const path = "regex.go"

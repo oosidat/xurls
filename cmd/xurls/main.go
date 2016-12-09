@@ -10,7 +10,7 @@ import (
 	"os"
 	"regexp"
 
-	"github.com/mvdan/xurls"
+	"github.com/oosidat/xurls"
 )
 
 var (
