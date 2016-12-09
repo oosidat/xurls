@@ -39,6 +39,8 @@ const (
 
 	strict  = `(\b` + scheme + pathCont + `)`
 	relaxed = `(` + strict + `|` + webURL + `)`
+
+	email = `([^\s]@` + hostName + `)`
 )
 
 var (
@@ -46,11 +48,14 @@ var (
 	Relaxed = regexp.MustCompile(relaxed)
 	// Strict only matches urls with a scheme to avoid false positives.
 	Strict = regexp.MustCompile(strict)
+	// Email matches all Emails it can find.
+	Email = regexp.MustCompile(email)
 )
 
 func init() {
 	Relaxed.Longest()
 	Strict.Longest()
+	Email.Longest()
 }
 
 // StrictMatchingScheme produces a regexp that matches urls like Strict but
